@@ -1,0 +1,11 @@
+Implement dynamic instruction panel for Meta Quest 3 VR app in Unity with Hebrew support
+
+- Created `InstructionPanel` as a World Space Canvas, positioned 1.5m in front of `OVRCameraRig`'s `CenterEyeAnchor` with height adjustment using `PanelPositioner.cs`.
+- Added dynamic content support with `InstructionManager.cs`:
+  - Displays text (`TextualInstruction` with TextMeshProUGUI), images (`VisualInstruction` with RawImage), videos (`VideoInstruction` with VideoPlayer and Render Texture), and audio (`VocalInstruction` with AudioSource).
+  - Managed content via `Instruction` struct array, with navigation using `NextButton` and `PrevButton`.
+- Configured UI with Content Size Fitter and Layout Element for adaptive sizing.
+- Ensured components toggle visibility based on content availability (e.g., `imageUI.gameObject.SetActive(instr.image != null)`).
+- Added Hebrew text support by importing Noto Sans Hebrew font and enabling RTL in TextMeshProUGUI.
+- Tested in Unity and Quest 3 with Passthrough mode; hand tracking not yet implemented.
+- Hands control will be added in the next version
